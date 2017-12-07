@@ -14,7 +14,15 @@ $client.DownloadFile('https://download-installer.cdn.mozilla.net/pub/firefox/rel
 
 
 @Echo Installing Notepad plus plus
+$client.DownloadFile('https://notepad-plus-plus.org/repository/7.x/7.3.3/npp.7.3.3.Installer.exe', 'c:/temp/notepadplusplus.exe')
+c:/notepadplusplus.exe /S
 
+
+@Echo Installing Slack
+$client.DownloadFile('https://slack-ssb-updates.global.ssl.fastly.net/releases_x64/SlackSetup.msi', 'c:/temp/SlackSetup.msi')
+msiexec /i c:/temp/SlackSetup.msi /quiet /qn /norestart
 
 #Cleaning up
 rm c:/temp -rec
+
+
